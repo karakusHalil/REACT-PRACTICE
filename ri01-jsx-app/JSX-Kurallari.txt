@@ -1,0 +1,25 @@
+
+
+
+1-  return anahtarı ile daima HTML yapısı döndürmemiz gerekiyor.
+2-  return ettiğimiz HTML yapısı tek bir değer döndürmelidir. Birden fazl HTML etiketleri döndürmemiz gerekiyorsa bu elementleri kapsayıcı bir element içerisinde döndürmemiz gerekir.
+3-  <Reac.Fragment> HTML YAPISI BURADA OLACAK</Reac.Fragment>
+yada <>HTML YAPISI BURADA OLACAK</>
+
+4-  HTML etiketleri arasında JavaScript kodları çalıştırmak istersek süslü parantezler {} içerisinde yazmamız gerekir.
+
+5-  HTML etiketlerinin mutlaka kapatılması gerekir. <etiket></etiket> yada <etiket />
+
+6-  HTML etiketlerine class verilecekse class attribute anahtar kelimesi yerine className anahtar kelimesini kullanmalıyız.
+
+7-  {/* AÇIKLAMA SATIRLARINDA MUTLAKA {} PARANTEZLERİN ARASINA YAZILMALIDIR */}
+
+8-  style attribute ile css tanımlamaları yapılcaksa süslü parantezler içerisinde obje olarak tanımlanmalıdır.
+Yani style={{}}
+
+9-  style ile css değerleri verilirken örneğin text-align gibi çift kelimeden oluşan ve aralarında - ile birbirine bağlanan değerler yerine camelCase yazı stili ile kelimeler bağlanarak kullanılır. text-align yerine textAlign veya bacground-color yerine bacgroundColor.
+
+10- Map ile dönerken html etiketlerine mutlaka key değeri atamalıyız.
+
+11- React component isimleri BÜYÜK HARFLE başlamalıdır. Eğer component isimi 2 veya daha fazla kelimeden oluşuyorsa HerKelimeninIlkHarfi büyük yazılmalıdır. (PascalCase)
+
