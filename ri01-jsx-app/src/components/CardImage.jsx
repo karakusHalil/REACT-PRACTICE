@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const CardImage = (props) => {
   return (
     <img
-      style={{ width: "100%" }}
+      style={{ maxWidth: "100%" }}
       src={props.cardPicture}
       className="card-img-top"
       alt="..."
