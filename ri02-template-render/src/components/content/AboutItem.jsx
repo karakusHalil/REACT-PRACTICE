@@ -1,4 +1,4 @@
-import PropTypes, { func } from "prop-types"
+import PropTypes from "prop-types"
 import { useState } from "react";
 
 function AboutItem(props) {
@@ -6,6 +6,7 @@ function AboutItem(props) {
   function handleCountButton(){
     setCount(count + 1);
   }
+  
   return (
     <>
       <div className="w3-col l3 m6 w3-margin-bottom">
@@ -22,6 +23,7 @@ function AboutItem(props) {
         </p>
         <p>
           <button className="w3-button w3-light-grey w3-block" onClick={handleCountButton}>Contact</button>
+          <button className="w3-button w3-light-grey w3-block" onClick={() => {props.incrementGeneralCount() ; props.incrementGeneralCount2();}}>General Contact</button>
         </p>
       </div>
     </>
@@ -31,5 +33,7 @@ function AboutItem(props) {
 export default AboutItem;
 
 AboutItem.propTypes = {
-    about : PropTypes.object
+    about : PropTypes.object,
+    incrementGeneralCount : PropTypes.func,
+    incrementGeneralCount2 : PropTypes.func
 }
