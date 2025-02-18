@@ -1,11 +1,13 @@
-import PropTypes from "prop-types"
+import PropTypes, { func } from "prop-types"
 
 function ContactForm(props) {
 
     function handleFirstNameOnChange(e){
         props.setFirstName(e.target.value);
     }
-
+    function handleLastNameOnChange(e){
+        props.setLastName(e.target.value);
+    }
   return (
     <>
       <div className="row py-4">
@@ -24,6 +26,7 @@ function ContactForm(props) {
             className="form-control"
             placeholder="Last name"
             aria-label="Last name"
+            onChange={(e)=>handleLastNameOnChange(e)}
           />
         </div>
         <div className="col-12 mt-4">
