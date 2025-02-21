@@ -1,6 +1,5 @@
 import Contact from "./components/contact/Contact";
-import Home from "./components/home/home";
-
+import Home from "./components/home/Home"
 function App() {
   return (
     <>
