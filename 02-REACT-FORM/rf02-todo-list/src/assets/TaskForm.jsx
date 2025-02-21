@@ -25,7 +25,7 @@ function TaskForm() {
   function handleButtonSubmit(e){
     e.preventDefault();
     setTasks((prev) => [...prev,formData])
-
+    console.log(tasks);
   //  console.log(formData)
   }
 
