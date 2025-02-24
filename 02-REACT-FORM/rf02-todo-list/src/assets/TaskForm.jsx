@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function TaskForm() {
-    const emptyForm = {task : "", important : false};
+  const emptyForm = { task: "", important: false };
   const [formData, setFormData] = useState(emptyForm);
-  const [tasks,setTasks] = useState([]);
-
+  const [tasks, setTasks] = useState([]);
 
   function handleInputChange(e) {
     setFormData((prev) => {
@@ -15,22 +15,25 @@ function TaskForm() {
       };
     });
 
-   // console.log(formData)
+    // console.log(formData)
 
     // e.target.type === "checkbox"
     //   ? console.log(e.target.checked)
     //   : console.log(e.target.value);
   }
 
-  function handleButtonSubmit(e){
+  function handleButtonSubmit(e) {
     e.preventDefault();
-    setTasks((prev) => [...prev,formData])
+
+    if (formData.task.length >= 3) {
+      formData.id = uuidv4();
+      setTasks((prev) => [...prev, formData]);
+      setFormData(emptyForm);
+      e.target.reset();
+    }
     console.log(tasks);
-  //  console.log(formData)
+    //  console.log(formData)
   }
-
-
-
 
   return (
     <>
