@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import TaskList from "./TaskList";
 
 function TaskForm() {
   const emptyForm = { task: "", important: false };
@@ -31,7 +32,7 @@ function TaskForm() {
       setFormData(emptyForm);
       e.target.reset();
     }
-    console.log(tasks);
+    // console.log(tasks);
     //  console.log(formData)
   }
 
@@ -73,6 +74,7 @@ function TaskForm() {
           Save
         </button>
       </form>
+      <TaskList tasks = {tasks}/>
     </>
   );
 }

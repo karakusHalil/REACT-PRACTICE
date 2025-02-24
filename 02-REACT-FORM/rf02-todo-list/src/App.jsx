@@ -1,4 +1,4 @@
-import TaskForm from "./assets/TaskForm";
+import TaskForm from "./TaskForm"
 
 function App() {
   return (
