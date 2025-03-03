@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [FirstName, setFirstName] = useState(" ");
+  const [LastName, setLastName] = useState(" ");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("her koşulda çalışır");
+  });
+
+  useEffect(() => {
+    console.log("render edildiğinde çalışır");
+  }, []);
+
+  useEffect(() => {
+    console.log("Firstname veya Lastname değiştiğinde çalışır");
+  }, [FirstName, LastName]);
+
+  useEffect(() => {
+    console.log("Count değiştikçe çalışır");
+  }, [count]);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <p className="text-center mt-5">Count: {count}</p>
+      <p className="text-center">FirstName: {FirstName}</p>
+      <p className="text-center">LastName: {LastName}</p>
+      <p className="d-grid gap-3 justify-content-center mt-5">
+        <button className="btn btn-primary w-100"
+          onClick={() => {
+            setFirstName("sergen");
+          }}
+        >
+          İsim Değiştir
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        <button className="btn btn-primary w-100"
+          onClick={() => {
+            setLastName("yılmaz");
+          }}
+        >
+          Soyismi Değiştir
+        </button>
+
+        <button className="btn btn-primary w-100"
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          Arttır
+        </button>
+        <button className="btn btn-primary w-100"
+          onClick={() => {
+            setCount(count - 1);
+          }}
+        >
+          Azalt
+        </button>
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
