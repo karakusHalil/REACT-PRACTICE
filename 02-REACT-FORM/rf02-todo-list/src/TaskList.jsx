@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function TaskList({ tasks, removeTask }) {
+function TaskList({ tasks, removeTask, editTask }) {
   if (tasks.length === 0) {
     return <></>;
   }
@@ -20,9 +20,12 @@ function TaskList({ tasks, removeTask }) {
                 role="group"
                 aria-label="Basic example"
               >
-                <button type="button" className="btn btn-sm btn-primary">
+                <button type="button" className="btn btn-sm btn-primary"
+                onClick={()=>editTask(item.id)}>
                   UPDATE
                 </button>
+
+
                 <button
                   type="button"
                   className="btn btn-sm btn-danger"
@@ -44,4 +47,5 @@ export default TaskList;
 TaskList.propTypes = {
   tasks: PropTypes.array,
   removeTask: PropTypes.func,
+  editTask: PropTypes.func
 };

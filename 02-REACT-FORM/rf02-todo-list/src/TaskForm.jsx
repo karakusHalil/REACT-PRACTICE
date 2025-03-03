@@ -7,9 +7,15 @@ function TaskForm() {
   const [formData, setFormData] = useState(emptyForm);
   const [tasks, setTasks] = useState([]);
 
-  function removeTask(id){
-    console.log(id)
-    setTasks(prev => prev.filter(task => task.id != id));
+  function removeTask(id) {
+    console.log(id);
+    setTasks((prev) => prev.filter((task) => task.id != id));
+  }
+
+  function editTask(id) {
+    const task = tasks.find((item) => item.id === id);
+    setFormData({ ...task });
+    // console.log(task)
   }
 
   function handleInputChange(e) {
@@ -31,12 +37,25 @@ function TaskForm() {
   function handleButtonSubmit(e) {
     e.preventDefault();
 
-    if (formData.task.length >= 3) {
+    if (formData.id) {
+      // console.log(formData.id)
+      const newTasks = tasks.map((task) => {
+        if (task.id === formData.id) {
+          return {
+            id: formData.id,
+            task: formData.task,
+            import: formData.important,
+          };
+        }
+        return task;
+      });
+      setTasks(newTasks);
+    } else if (formData.task.length >= 3) {
       formData.id = uuidv4();
-      setTasks((prev) => [formData ,...prev ]);
-      setFormData(emptyForm);
-      e.target.reset();
+      setTasks((prev) => [formData, ...prev]);
     }
+    setFormData(emptyForm);
+    e.target.reset();
     // console.log(tasks);
     //  console.log(formData)
   }
@@ -54,6 +73,7 @@ function TaskForm() {
               className="form-control"
               id="task"
               name="task"
+              value={formData.task}
               onChange={handleInputChange}
             />
           </div>
@@ -67,7 +87,7 @@ function TaskForm() {
                 type="checkbox"
                 id="important"
                 name="important"
-                defaultChecked
+                checked={formData.important}
                 onChange={handleInputChange}
               />
               <label className="form-check-label" htmlFor="gridCheck1">
@@ -80,7 +100,7 @@ function TaskForm() {
           Save
         </button>
       </form>
-      <TaskList tasks = {tasks} removeTask ={removeTask}/>
+      <TaskList tasks={tasks} removeTask={removeTask} editTask={editTask} />
     </>
   );
 }
