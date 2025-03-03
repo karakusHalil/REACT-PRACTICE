@@ -7,6 +7,11 @@ function TaskForm() {
   const [formData, setFormData] = useState(emptyForm);
   const [tasks, setTasks] = useState([]);
 
+  function removeTask(id){
+    console.log(id)
+    setTasks(prev => prev.filter(task => task.id != id));
+  }
+
   function handleInputChange(e) {
     setFormData((prev) => {
       return {
@@ -28,7 +33,7 @@ function TaskForm() {
 
     if (formData.task.length >= 3) {
       formData.id = uuidv4();
-      setTasks((prev) => [...prev, formData]);
+      setTasks((prev) => [formData ,...prev ]);
       setFormData(emptyForm);
       e.target.reset();
     }
@@ -62,6 +67,7 @@ function TaskForm() {
                 type="checkbox"
                 id="important"
                 name="important"
+                defaultChecked
                 onChange={handleInputChange}
               />
               <label className="form-check-label" htmlFor="gridCheck1">
@@ -74,7 +80,7 @@ function TaskForm() {
           Save
         </button>
       </form>
-      <TaskList tasks = {tasks}/>
+      <TaskList tasks = {tasks} removeTask ={removeTask}/>
     </>
   );
 }
