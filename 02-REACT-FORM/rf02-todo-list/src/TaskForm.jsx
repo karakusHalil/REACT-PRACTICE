@@ -1,11 +1,24 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TaskList from "./TaskList";
+import { useEffect } from "react";
 
 function TaskForm() {
+  const localStorageTasks = JSON.parse(localStorage.getItem("tasks"))
+      ? JSON.parse(localStorage.getItem("tasks"))
+      : [];
   const emptyForm = { task: "", important: false };
   const [formData, setFormData] = useState(emptyForm);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(localStorageTasks);
+
+  // useEffect(() => {
+  //   setTasks(localStorageTasks ? localStorageTasks : []);
+  //   // or setTasks(localStorageTasks ?? []);
+  // }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function removeTask(id) {
     console.log(id);
@@ -42,9 +55,9 @@ function TaskForm() {
       const newTasks = tasks.map((task) => {
         if (task.id === formData.id) {
           return {
-            id: formData.id,
             task: formData.task,
             import: formData.important,
+            id: formData.id,
           };
         }
         return task;
