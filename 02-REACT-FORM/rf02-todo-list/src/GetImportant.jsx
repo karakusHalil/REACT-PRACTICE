@@ -15,5 +15,5 @@ export default GetImportant;
 
 GetImportant.propTypes = {
     handleTasksFilter : PropTypes.func,
-    important : PropTypes.bool
+    important : PropTypes.boolean
 }

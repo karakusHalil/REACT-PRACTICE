@@ -56,7 +56,7 @@ function TaskForm() {
         if (task.id === formData.id) {
           return {
             task: formData.task,
-            import: formData.important,
+            important: formData.important,
             id: formData.id,
           };
         }
