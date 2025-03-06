@@ -11,4 +11,4 @@ React Router Dom yapısını öğreneceğiz
 
 ## Yapılacaklar
 * [x] React-Router-Dom ve Bootstrap paketleri kurulacak
-* [x] Navbar Componenti oluşturulacak
+* [] Navbar Componenti oluşturulacak
