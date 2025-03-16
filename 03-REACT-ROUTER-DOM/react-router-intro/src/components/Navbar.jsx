@@ -41,7 +41,12 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
-                  Contact
+                  İletişim
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/productdetail">
+                  Ürün-Detay
                 </NavLink>
               </li>
             </ul>
