@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Products from "../pages/Products";
 import Contact from "../pages/Contact";
 import ProductDetail from "../pages/ProductDetail";
+import NotFound from "../pages/NotFound";
 
 function SiteRoutes() {
   return (
@@ -14,6 +15,7 @@ function SiteRoutes() {
         <Route path="/products" element={<Products />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/productdetail" element={<ProductDetail />} />
+        <Route path="*" element={<NotFound/>}/>
       </Routes>
     </>
   );
