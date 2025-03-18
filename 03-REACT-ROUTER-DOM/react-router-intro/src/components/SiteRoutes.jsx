@@ -15,10 +15,12 @@ function SiteRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-
-
         <Route path="/products" element={<Products />}/>
-        <Route path="/productlist" element={<ProductList />}/>
+
+        <Route path="/productlist" element={<ProductList />}>
+          <Route index={true} element={<Products/>}/>
+          <Route path="category/:categoryName" element={<Category/>}/>
+        </Route>
 
 
 

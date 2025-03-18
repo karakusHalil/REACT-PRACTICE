@@ -15,7 +15,7 @@ function Categories() {
       <div className="list-group">
         {categories.map((category, index) => (
           <Link
-            to="/"
+            to={`/productlist/category/${category}`}
             className="list-group-item list-group-item-action list-group-item-primary"
             key={index}
           >
