@@ -5,6 +5,9 @@ import Products from "../pages/Products";
 import Contact from "../pages/Contact";
 import ProductDetail from "../pages/ProductDetail";
 import NotFound from "../pages/NotFound";
+import Categories from "./products/Categories";
+import Category from "./products/Category";
+import ProductList from "../pages/ProductList";
 
 function SiteRoutes() {
   return (
@@ -12,7 +15,13 @@ function SiteRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
+
+
+        <Route path="/products" element={<Products />}/>
+        <Route path="/productlist" element={<ProductList />}/>
+
+
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="*" element={<NotFound/>}/>

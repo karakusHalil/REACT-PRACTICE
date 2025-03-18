@@ -49,6 +49,11 @@ function Navbar() {
                   Ürün-Detay
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/productlist">
+                  Ürün Listesi
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
