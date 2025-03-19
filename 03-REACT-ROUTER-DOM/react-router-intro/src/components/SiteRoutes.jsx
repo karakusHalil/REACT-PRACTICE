@@ -15,18 +15,16 @@ function SiteRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />}/>
+        <Route path="/products" element={<Products />} />
 
         <Route path="/productlist" element={<ProductList />}>
-          <Route index={true} element={<Products/>}/>
-          <Route path="category/:categoryName" element={<Category/>}/>
+          <Route index={true} element={<Products />} />
+          <Route path="category/:categoryName" element={<Category />} />
+          <Route path="product/:productId" element={<ProductDetail />} />
         </Route>
 
-
-
         <Route path="/contact" element={<Contact />} />
-        <Route path="/productdetail" element={<ProductDetail />} />
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

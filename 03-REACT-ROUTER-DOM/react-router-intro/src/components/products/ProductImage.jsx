@@ -4,11 +4,11 @@ function ProductImage({ product }) {
   return (
     <>
       <div className="col-4 border p-2">
-        <img
-          src={product.image}
-          alt={product.title}
-          style={{ width: "100%" }}
-        />
+          <img
+            src={product.image}
+            alt={product.title}
+            style={{ width: "100%" }}
+          />
       </div>
     </>
   );
