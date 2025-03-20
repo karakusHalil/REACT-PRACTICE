@@ -1,7 +1,8 @@
 import Categories from "../components/products/Categories";
 import Products from "./Products";
+import PropTypes from "prop-types";
 
-function Home() {
+function Home({ setFavorites, favorites }) {
   return (
     <>
       <div className="row justify-content-between" style={{ width: "100%" }}>
@@ -9,7 +10,7 @@ function Home() {
           <Categories />
         </div>
         <div className="col-sm-12 col-md-9">
-          <Products/>
+          <Products setFavorites={setFavorites} favorites={favorites}/>
         </div>
       </div>
     </>
@@ -17,3 +18,8 @@ function Home() {
 }
 
 export default Home;
+
+Home.propTypes = {
+  setFavorites: PropTypes.func,
+  favorites: PropTypes.array,
+};
