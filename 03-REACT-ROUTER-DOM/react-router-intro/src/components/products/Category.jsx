@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
+import PropTypes from "prop-types";
 
-function Category() {
+function Category({setFavorites, favorites}) {
   const { categoryName } = useParams();
   const [productsInCategory, setProductsInCategory] = useState([]);
 
@@ -16,7 +17,7 @@ function Category() {
       <h2>{categoryName.substring(0, 1).toUpperCase() + categoryName.substring(1)}</h2>
       <div className="row row-cols-sm-1 row-cols-2 row-cols-md-4 row-cols-lg-5">
         {productsInCategory.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} setFavorites={setFavorites} favorites={favorites}/>
         ))}
       </div>
     </>
@@ -24,3 +25,8 @@ function Category() {
 }
 
 export default Category;
+
+Category.propTypes = {
+  setFavorites: PropTypes.func,
+  favorites: PropTypes.array
+};

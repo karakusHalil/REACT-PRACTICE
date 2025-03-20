@@ -1,7 +1,16 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Favorites from "../../pages/Favorites";
 
-function ProductCard({ product }) {
+function ProductCard({ product, setFavorites, favorites }) {
+  const addFavorite = (item) => {
+    setFavorites(
+      favorites.some((fav) => fav.id === item.id)
+        ? favorites
+        : [...favorites, item]
+    );
+  };
+
   return (
     <>
       <div className="p-1">
@@ -20,9 +29,12 @@ function ProductCard({ product }) {
               {product.description.substring(0, 80)}...
             </p>
             <p className="lead">{product.price}$</p>
-            <a href="#" className="btn btn-primary">
-              Product Details
-            </a>
+            <button
+              className="btn btn-primary"
+              onClick={() => addFavorite(product)}
+            >
+              Favorilere Ekle
+            </button>
           </div>
         </div>
       </div>
@@ -34,4 +46,6 @@ export default ProductCard;
 
 ProductCard.propTypes = {
   product: PropTypes.object,
+  setFavorites: PropTypes.func,
+  favorites: PropTypes.array,
 };
