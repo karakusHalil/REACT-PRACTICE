@@ -6,7 +6,7 @@ function TopAbout() {
 
   return (
     <>
-      <article>
+      <article style={{marginBottom : "20px"}}>
         <h2>Top About Component Section</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
