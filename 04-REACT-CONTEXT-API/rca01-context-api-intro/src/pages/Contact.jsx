@@ -1,10 +1,13 @@
+import TopAbout from "../components/About/TopAbout";
+import TopSection from "../components/Home/TopSection";
 
 function Contact() {
   return (
     <>
-    <div>contact</div>
+      <TopSection />
+      <TopAbout />
     </>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
