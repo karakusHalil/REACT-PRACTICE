@@ -1,29 +1,15 @@
+import { useContext } from "react";
+import TopAbout from "../components/About/TopAbout";
+import { UserContext } from "../contexts/UserContext";
+
 function About() {
+  const { users } = useContext(UserContext);
   return (
     <>
       <div className="row">
+        <TopAbout />
         <article>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            voluptatibus laboriosam magnam sapiente mollitia nostrum!
-          </p>
-          <p>
-            Accusantium ad fugiat obcaecati, error minima ducimus adipisci
-            cumque odit veniam. Labore accusamus illum delectus.
-          </p>
-          <p>
-            Alias et cum velit, eum consequuntur soluta magni fugit quaerat
-            architecto cumque explicabo excepturi iusto?
-          </p>
-          <ul>
-            <li>Lorem, ipsum dolor.</li>
-            <li>Mollitia, repudiandae ut?</li>
-            <li>Sapiente, dolore! Iste.</li>
-            <li>Nam, odit harum!</li>
-            <li>Numquam, nam accusamus!</li>
-          </ul>
-        </article>
-        <article>
+          <h2>About Page Section</h2>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea eius,
             doloribus laboriosam autem quis porro.
@@ -37,11 +23,11 @@ function About() {
             laudantium, deleniti provident saepe neque?
           </p>
           <ul>
-            <li>Lorem, ipsum dolor.</li>
-            <li>Id, vitae nemo?</li>
-            <li>Voluptates, at expedita!</li>
-            <li>Quas, repellendus harum?</li>
-            <li>Ducimus, amet dignissimos.</li>
+            {users.map((user) => (
+              <li key={user.id}>
+                {user.firstname} {user.lastname.toUpperCase()}
+              </li>
+            ))}
           </ul>
         </article>
       </div>
