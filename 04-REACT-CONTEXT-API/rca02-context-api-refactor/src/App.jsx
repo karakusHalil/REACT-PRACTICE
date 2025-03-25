@@ -1,5 +1,5 @@
-import Navbar from "./assets/components/Navbar/Navbar"
-import SiteRoutes from "./assets/components/SiteRoutes"
+import Navbar from "./components/Navbar/Navbar"
+import SiteRoutes from "./components/SiteRoutes"
 
 function App() {
 
