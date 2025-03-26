@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const ProductContext = createContext();
 
@@ -11,7 +12,6 @@ function ProductContextProvider({ children }) {
       .then((data) => setProducts(data));
   }, []);
 
-  
   const productValue = {
     products: products,
     setProducts: setProducts,
@@ -27,3 +27,7 @@ function ProductContextProvider({ children }) {
 }
 
 export { ProductContextProvider, ProductContext };
+
+ProductContextProvider.propTypes = {
+  children: PropTypes.element,
+};
