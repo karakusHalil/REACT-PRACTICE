@@ -36,7 +36,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
-                  Hakkında
+                  Hakkımızda
                 </NavLink>
               </li>
               <li className="nav-item">
