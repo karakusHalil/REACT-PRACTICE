@@ -6,7 +6,11 @@ function App() {
   return (
     <>
     <Navbar/>
-    <SiteRoutes/>
+    <div className="container">
+        <div className="row">
+          <SiteRoutes/>
+        </div>
+      </div>
     </>
   )
 }

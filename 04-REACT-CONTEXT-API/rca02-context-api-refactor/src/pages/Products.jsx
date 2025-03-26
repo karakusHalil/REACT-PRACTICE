@@ -6,9 +6,9 @@ function Products() {
   
   return (
     <>
-      <ul>
+      <ul className="list-group">
         {products.map((product) => (
-          <li key={product.id}>{product.title}</li>
+          <li className="list-group-item" key={product.id}>{product.title}</li>
         ))}
       </ul>
     </>

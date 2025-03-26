@@ -1,9 +1,17 @@
+import { useContext } from "react"
+import { ProductContext } from "../contexts/ProductContext"
 
 
 function Home() {
+  const {products} = useContext(ProductContext);
   return (
     <>
-        <h2>HOME</h2>
+        <ul className="list-group">
+          {
+            products.map((product)=>
+            <li className="list-group-item" key={product.id}>{product.title}</li>)
+          }
+        </ul>
     </>
   )
 }
