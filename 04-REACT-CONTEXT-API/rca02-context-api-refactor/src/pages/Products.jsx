@@ -1,11 +1,18 @@
-import React from 'react'
+import { useContext } from "react";
+import { ProductContext } from "../contexts/ProductContext";
 
 function Products() {
+  const { products } = useContext(ProductContext);
+  
   return (
     <>
-        <h2>PRODUCTS</h2>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>{product.title}</li>
+        ))}
+      </ul>
     </>
-  )
+  );
 }
 
-export default Products
+export default Products;
