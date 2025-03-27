@@ -1,10 +1,33 @@
+import { createContext, useEffect, useState } from "react";
+import PropType from "prop-types";
 
-function CategoryContext() {
+const CategoryContext = createContext();
+
+function CategoryContextProvider({ children }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/categories")
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
+
+  const categoryValue = {
+    categories: categories,
+    setCategories: setCategories,
+  };
+
   return (
     <>
-    
+      <CategoryContext.Provider value={categoryValue}>
+        {children}
+      </CategoryContext.Provider>
     </>
-  )
+  );
 }
 
-export default CategoryContext
+export { CategoryContext, CategoryContextProvider };
+
+CategoryContextProvider.propTypes = {
+  children: PropType.element,
+};
