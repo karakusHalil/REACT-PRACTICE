@@ -12,7 +12,6 @@ function CategoryContextProvider({ children }) {
       .then((data) => setCategories(data));
   }, []);
 
-
   const categoryValue = {
     categories: categories,
     setCategories: setCategories,
