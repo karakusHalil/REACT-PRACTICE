@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import PropType from "prop-types";
+import PropTypes from "prop-types";
 
 const CategoryContext = createContext();
 
@@ -7,10 +7,11 @@ function CategoryContextProvider({ children }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/categories")
+    fetch("https://fakestoreapi.com/products/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
+
 
   const categoryValue = {
     categories: categories,
@@ -29,5 +30,5 @@ function CategoryContextProvider({ children }) {
 export { CategoryContext, CategoryContextProvider };
 
 CategoryContextProvider.propTypes = {
-  children: PropType.element,
+  children: PropTypes.element,
 };
