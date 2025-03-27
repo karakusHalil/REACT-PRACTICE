@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
 import { CategoryContext } from "../contexts/CategoryContext";
+import Categories from "../components/Category/Categories";
 
 function Products() {
   const { products } = useContext(ProductContext);
-  const { categories } = useContext(CategoryContext);
   return (
     <>
       <ul className="list-group">
@@ -14,13 +14,7 @@ function Products() {
           </li>
         ))}
       </ul>
-      <ul className="list-group">
-        {categories.map((category, index) => (
-          <li className="list-group item" key={index}>
-            {category}
-          </li>
-        ))}
-      </ul>
+        <Categories/>
     </>
   );
 }
