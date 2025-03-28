@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
   return (
@@ -17,7 +18,7 @@ function ProductCard({ product }) {
               {product.description.substring(0, 50)}...
             </p>
             <p className="lead">{product.price}$</p>
-            <button
+            <Link to={`productdetails/${product.id}`}
               className="btn btn-primary mt-auto w-100"
               style={{
                 position: "absolute",
@@ -27,7 +28,7 @@ function ProductCard({ product }) {
               }}
             >
               Sepete Ekle
-            </button>
+            </Link>
           </div>
         </div>
       </div>

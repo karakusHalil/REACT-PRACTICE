@@ -1,34 +1,37 @@
-// import { Children, createContext, useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-// import PropTypes from "prop-types";
+import { createContext, useEffect, useState } from "react";
 
-// const ProductItemContext = createContext();
+import PropTypes from "prop-types";
 
-// function ProductItemContextProvider({ children }) {
-//   const { productId } = useParams();
-//   const [productItem, setProductItem] = useState([]);
+const ProductItemContext = createContext();
 
-//   useEffect(() => {
-//     fetch(`https://fakestoreapi.com/products/${productId}`)
-//       .then((res) => res.json())
-//       .then((data) => setProductItem(data));
-//   }, [productId]);
+function ProductItemContextProvider({ children }) {
+  const [productItem, setProductItem] = useState({});
+  const [productId, setProductId] = useState(null);
 
-//   const productItemValue = {
-//     productItem,
-//     setProductItem,
-//   };
-//   return (
-//     <>
-//       <ProductItemContext.Provider value={productItemValue}>
-//         {children}
-//       </ProductItemContext.Provider>
-//     </>
-//   );
-// }
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${productId}`)
+      .then((res) => res.json())
+      .then((data) => setProductItem(data));
+  }, [productId]);
+console.log(productId)
 
-// export { ProductItemContext, ProductItemContextProvider };
+  const productItemValue = {
+    productItem,
+    setProductItem,
+    productId,
+    setProductId,
+  };
+  return (
+    <>
+      <ProductItemContext.Provider value={productItemValue}>
+        {children}
+      </ProductItemContext.Provider>
+    </>
+  );
+}
 
-// ProductItemContextProvider.propTypes = {
-//   children: PropTypes.element,
-// };
+export { ProductItemContext, ProductItemContextProvider };
+
+ProductItemContextProvider.propTypes = {
+  children: PropTypes.element,
+};

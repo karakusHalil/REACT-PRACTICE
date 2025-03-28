@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
-import Categories from "../components/Category/Categories";
 import ProductCard from "../components/Product/ProductCard";
 
 function Products() {

@@ -8,7 +8,7 @@ function Home() {
         <div className="col-sm-12 col-md-3 ">
           <Categories />
         </div>
-        <div className="col-sm-12 col-md-9">
+        <div className="col-sm-12 col-md-9 mt-4">
           <Products/>
         </div>
       </div>
