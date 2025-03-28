@@ -1,11 +1,10 @@
 import PropTypes from "prop-types";
 
 function ProductCard({ product }) {
-
   return (
     <>
       <div className="p-1">
-        <div className="card p-2">
+        <div className="card p-1 " style={{ height: "550px" }}>
           <img
             src={product.image}
             className="card-img-top"
@@ -13,10 +12,22 @@ function ProductCard({ product }) {
             style={{ height: "25vh" }}
           />
           <div className="card-body">
-            <h5 className="card-title">{product.title.substring(0,25)}</h5>
-            <p className="card-text">{product.description.substring(0,50)}...</p>
+            <h5 className="card-title">{product.title.substring(0, 25)}</h5>
+            <p className="card-text">
+              {product.description.substring(0, 50)}...
+            </p>
             <p className="lead">{product.price}$</p>
-            <button className="btn btn-primary mt-auto w-100">Ekle</button>
+            <button
+              className="btn btn-primary mt-auto w-100"
+              style={{
+                position: "absolute",
+                bottom: "1px",
+                left: "1px",
+                right: "1px",
+              }}
+            >
+              Sepete Ekle
+            </button>
           </div>
         </div>
       </div>
