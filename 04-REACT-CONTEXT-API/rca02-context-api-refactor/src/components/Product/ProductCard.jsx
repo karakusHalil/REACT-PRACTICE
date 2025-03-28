@@ -18,7 +18,8 @@ function ProductCard({ product }) {
               {product.description.substring(0, 50)}...
             </p>
             <p className="lead">{product.price}$</p>
-            <Link to={`productdetails/${product.id}`}
+            <Link
+              to={`productdetails/${product.id}`}
               className="btn btn-primary mt-auto w-100"
               style={{
                 position: "absolute",

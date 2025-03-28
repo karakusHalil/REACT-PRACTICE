@@ -1,19 +1,12 @@
-import { useContext } from "react";
-import { ProductContext } from "../contexts/ProductContext";
-import ProductCard from "../components/Product/ProductCard";
+import { Outlet } from "react-router-dom";
+
 
 function Products() {
-  const { products } = useContext(ProductContext);
+
   
   return (
     <>
-      <div className="row row-cols-sm-1 row-cols-2 row-cols-md-4 row-cols-lg-5">
-        {
-          products.map((product)=>(
-            <ProductCard key={product.id} product={product}/>
-          ))
-        }
-      </div>
+      <Outlet/>
     </>
   );
 }

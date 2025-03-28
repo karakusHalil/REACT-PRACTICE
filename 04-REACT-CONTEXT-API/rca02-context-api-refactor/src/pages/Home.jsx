@@ -1,5 +1,5 @@
 import Categories from "../components/Category/Categories";
-import Products from "./Products";
+import ProductsList from "../components/Product/ProductsList";
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
           <Categories />
         </div>
         <div className="col-sm-12 col-md-9 mt-4">
-          <Products/>
+          <ProductsList/>
         </div>
       </div>
     </>
