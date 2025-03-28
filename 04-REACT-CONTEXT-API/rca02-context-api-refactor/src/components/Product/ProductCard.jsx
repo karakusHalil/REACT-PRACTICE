@@ -4,7 +4,7 @@ function ProductCard({ product }) {
   return (
     <>
       <div className="p-1">
-        <div className="card p-1 " style={{ height: "550px" }}>
+        <div className="card p-1 " style={{ height: "500px" }}>
           <img
             src={product.image}
             className="card-img-top"
@@ -21,7 +21,7 @@ function ProductCard({ product }) {
               className="btn btn-primary mt-auto w-100"
               style={{
                 position: "absolute",
-                bottom: "1px",
+                bottom: "0px",
                 left: "1px",
                 right: "1px",
               }}
