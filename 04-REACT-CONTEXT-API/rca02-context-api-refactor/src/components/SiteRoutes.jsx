@@ -8,15 +8,19 @@ import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import ProductDetails from "../pages/ProductDetails";
 import ProductsList from "./Product/ProductsList";
+import Category from "./Category/Category";
 
 function SiteRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}>
+          <Route index={true} element={<ProductsList />} />
+          <Route path="/productList/category/:CategoryName" element={<Category />} />
+        </Route>
 
         <Route path="/products" element={<Products />}>
-          <Route index={true} element={<ProductsList/>} />
+          <Route index={true} element={<ProductsList />} />
           <Route
             path="productdetails/:productId"
             element={<ProductDetails />}
@@ -26,7 +30,7 @@ function SiteRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-          <Route path="/productdetails/:productId" element={<ProductDetails />} />
+        <Route path="/productdetails/:productId" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

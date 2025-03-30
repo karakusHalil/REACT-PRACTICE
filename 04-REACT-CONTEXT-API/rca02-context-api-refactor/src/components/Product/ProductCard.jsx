@@ -5,7 +5,7 @@ function ProductCard({ product }) {
   return (
     <>
       <div className="p-1">
-        <div className="card p-1 " style={{ height: "500px" }}>
+        <div className="card p-1 " style={{ height: "510px" }}>
           <img
             src={product.image}
             className="card-img-top"
@@ -28,7 +28,7 @@ function ProductCard({ product }) {
                 right: "1px",
               }}
             >
-              Sepete Ekle
+              Ürün Detay
             </Link>
           </div>
         </div>

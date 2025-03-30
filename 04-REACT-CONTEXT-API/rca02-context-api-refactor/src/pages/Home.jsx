@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Categories from "../components/Category/Categories";
 import ProductsList from "../components/Product/ProductsList";
 
@@ -9,7 +10,7 @@ function Home() {
           <Categories />
         </div>
         <div className="col-sm-12 col-md-9 mt-4">
-          <ProductsList/>
+          <Outlet/>
         </div>
       </div>
     </>
