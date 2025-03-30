@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function ProductInfo({ productItem }) {
   return (
     <>
-      <div className="col-8 border p-2">
+      <div className="col-8 border p-2 w-100">
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
             <p style={{ fontWeight: "bold" }}>Ürün Adı :</p>{" "}

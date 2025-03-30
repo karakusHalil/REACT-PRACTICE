@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 function ProductImage({ productItem }) {
   return (
     <>
-      <img
-        src={productItem.image}
-        className="card-img-top"
-        alt={productItem.title}
-        style={{ height: "25vh" }}
-      />
+      <div className="col-4 border p-2 w-100">
+        <img
+          src={productItem.image}
+          className="card-img-top"
+          alt={productItem.title}
+          style={{ width: "100%" }}
+        />
+      </div>
     </>
   );
 }

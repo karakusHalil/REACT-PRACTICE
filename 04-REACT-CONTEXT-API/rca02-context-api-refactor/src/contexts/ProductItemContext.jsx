@@ -13,7 +13,7 @@ function ProductItemContextProvider({ children }) {
       .then((res) => res.json())
       .then((data) => setProductItem(data));
   }, [productId]);
-console.log(productId)
+
 
   const productItemValue = {
     productItem,

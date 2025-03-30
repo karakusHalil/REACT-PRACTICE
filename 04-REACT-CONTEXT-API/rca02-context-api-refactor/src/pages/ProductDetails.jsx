@@ -13,9 +13,15 @@ function ProductDetails() {
   }, [productId, setProductId]);
   return (
     <>
-      <div className="row mt-3">
-        <ProductImage productItem={productItem} />
-        <ProductInfo productItem={productItem} />
+      <div className="container mt-3">
+        <div className="row">
+          <div className="col-md-5">
+            <ProductImage productItem={productItem} />
+          </div>
+          <div className="col-md-7">
+            <ProductInfo productItem={productItem} />
+          </div>
+        </div>
       </div>
     </>
   );
