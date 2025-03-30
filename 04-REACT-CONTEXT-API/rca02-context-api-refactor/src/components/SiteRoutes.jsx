@@ -10,6 +10,7 @@ import ProductDetails from "../pages/ProductDetails";
 import ProductsList from "./Product/ProductsList";
 import Category from "./Category/Category";
 
+
 function SiteRoutes() {
   return (
     <>
@@ -17,6 +18,7 @@ function SiteRoutes() {
         <Route path="/" element={<Home />}>
           <Route index={true} element={<ProductsList />} />
           <Route path="/productList/category/:CategoryName" element={<Category />} />
+          <Route path="productList/category/:CategoryName/productdetails/:productId" element={<ProductDetails />}/>
         </Route>
 
         <Route path="/products" element={<Products />}>
@@ -30,7 +32,6 @@ function SiteRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/productdetails/:productId" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
