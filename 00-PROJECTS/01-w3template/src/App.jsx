@@ -13,6 +13,7 @@ import SlideShow from "./components/SlideShow";
 import Navigation from "./components/Navigation";
 import Pagination from "./components/Pagination";
 import Footer from "./components/Footer";
+import { CardContextProvider } from "./context/CardContext";
 function App() {
   return (
     <>
@@ -25,7 +26,9 @@ function App() {
       {/* <!-- Modal --> */}
       <Modal />
 
-      <CardList />
+      <CardContextProvider>
+        <CardList />
+      </CardContextProvider>
 
       <SectionOne />
 
