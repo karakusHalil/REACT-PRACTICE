@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { CardContext } from "../context/CardContext";
 
 function CardList() {
-  const { infos } = useContext(CardContext);
+  const { cardInfo } = useContext(CardContext);
   return (
     <>
       <div className="w3-row-padding w3-center w3-margin-top">
-        {infos.map((info, index) => (
+        {cardInfo.map((info, index) => (
           <div key={index} className="w3-third">
             <div
               className="w3-card w3-container"
