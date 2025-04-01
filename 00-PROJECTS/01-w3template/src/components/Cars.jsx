@@ -4,7 +4,7 @@ function Cars() {
       <div className="w3-row-padding">
         <div className="w3-third">
           <div className="w3-card">
-            <img src="/w3images/car.jpg" alt="Car" style={{ width: "100%" }} />
+            <img src="./car.jpg" alt="Car" style={{ width: "100%" }} />
             <div className="w3-container">
               <p>w3-card</p>
             </div>
@@ -13,7 +13,7 @@ function Cars() {
 
         <div className="w3-third">
           <div className="w3-card-4">
-            <img src="/w3images/car.jpg" alt="Car" style={{ width: "100%" }} />
+            <img src="./car.jpg" alt="Car" style={{ width: "100%" }} />
             <div className="w3-container">
               <p>w3-card-4</p>
             </div>
@@ -22,7 +22,7 @@ function Cars() {
 
         <div className="w3-third">
           <div className="w3-card-4">
-            <img src="/w3images/car.jpg" alt="Car" style={{ width: "100%" }} />
+            <img src="./car.jpg" alt="Car" style={{ width: "100%" }} />
             <div className="w3-container">
               <p>w3-card-4</p>
             </div>

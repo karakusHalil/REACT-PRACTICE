@@ -8,22 +8,22 @@ function SlideShow() {
       >
         <img
           className="mySlides w3-animate-opacity"
-          src="/w3images/snow.jpg"
+          src="./snow.jpg"
           style={{ width: "100%" }}
         />
         <img
           className="mySlides w3-animate-opacity"
-          src="/w3images/lights.jpg"
+          src="./lights.jpg"
           style={{ width: "100%" }}
         />
         <img
           className="mySlides w3-animate-opacity"
-          src="/w3images/mountains.jpg"
+          src="./mountains.jpg"
           style={{ width: "100%" }}
         />
         <img
           className="mySlides w3-animate-opacity"
-          src="/w3images/forest.jpg"
+          src="./forest.jpg"
           style={{ width: "100%" }}
         />
 
