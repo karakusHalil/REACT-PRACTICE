@@ -30,6 +30,7 @@ function SiteRoutes({ handleLogin, favorites, setFavorites }) {
         <Route path="/favorites" element={<Favorites favorites={favorites} />} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />} />
         <Route path="*" element={<NotFound />} />
+
       </Routes>
     </>
   );

@@ -10,7 +10,9 @@ function Home({ setFavorites, favorites }) {
           <Categories />
         </div>
         <div className="col-sm-12 col-md-9">
+        <div className="row row-cols-sm-1 row-cols-2 row-cols-md-4 row-cols-lg-5">
           <Products setFavorites={setFavorites} favorites={favorites}/>
+        </div>
         </div>
       </div>
     </>
