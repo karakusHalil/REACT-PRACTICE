@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const CardContext = createContext();
@@ -37,7 +37,11 @@ function CardContextProvider({ children }) {
     },
   ];
 
-  const [cardInfo, setCardInfo] = useState(infos);
+  const [cardInfo, setCardInfo] = useState([]);
+
+  useEffect(() => {
+    setCardInfo(infos);
+  }, []);
 
   const infoValue = {
     infos,
