@@ -9,7 +9,7 @@ import {
   SQUAREROOT,
   TWODECREMENT,
   TWOINCREMENT,
-} from "../reducers/counter";
+} from "../reducers";
 
 function ThirdCounter() {
   const [counter, dispatch] = useReducer(countReducer, initialCount);
