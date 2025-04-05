@@ -1,69 +1,9 @@
-import { useReducer, useState } from "react";
-import {
-  countReducer,
-  DECREMENT,
-  INCREMENT,
-  initialCount,
-  RESET,
-  SQUARE,
-  SQUAREROOT,
-  TWODECREMENT,
-  TWOINCREMENT,
-} from "./reducers/counter";
+import Counter from "./components/Counter";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  function increment() {
-    setCount((prev) => prev + 1);
-  }
-  function decrement() {
-    setCount((prev) => prev - 1);
-  }
-
-  function reset() {
-    setCount(0);
-  }
-
-  const [counter, dispatch] = useReducer(countReducer, initialCount);
-
   return (
     <>
-      <div className="d-flex flex-column justify-content-center align-items-center">
-        <h1>React Reducer</h1>
-
-        <h2>1.Yöntem</h2>
-        <h3>Counter : {count}</h3>
-        <div>
-          <button onClick={() => setCount((prev) => prev - 1)}> - </button>
-          <button onClick={() => setCount(0)}>RESET</button>
-          <button onClick={() => setCount((prev) => prev + 1)}> + </button>
-        </div>
-      </div>
-      <hr />
-      <div className="d-flex flex-column justify-content-center align-items-center">
-        <h2>2.Yöntem</h2>
-        <h3>Counter : {count}</h3>
-        <div>
-          <button onClick={()=>decrement}> - </button>
-          <button onClick={()=>reset}>RESET</button>
-          <button onClick={()=>increment}> + </button>
-        </div>
-      </div>
-      <hr />
-      <div className="d-flex flex-column justify-content-center align-items-center">
-        <h2>3.Yöntem Reducer</h2>
-        <h3>Counter : {counter}</h3>
-        <div>
-          <button onClick={() => dispatch(SQUAREROOT)}> ^-2 </button>
-          <button onClick={() => dispatch(TWODECREMENT)}> -2 </button>
-          <button onClick={() => dispatch(DECREMENT)}> - </button>
-          <button onClick={() => dispatch(RESET)}>RESET</button>
-          <button onClick={() => dispatch(INCREMENT)}> + </button>
-          <button onClick={() => dispatch(TWOINCREMENT)}> +2 </button>
-          <button onClick={() => dispatch(SQUARE)}> ^2 </button>
-        </div>
-      </div>
+      <Counter />
     </>
   );
 }
