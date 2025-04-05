@@ -1,13 +1,14 @@
-const DECREMENT = "DECREMENT";
-const INCREMENT = "INCREMENT";
-const TWODECREMENT = "TWODECREMENT";
-const TWOINCREMENT = "TWOINCREMENT";
-const SQUARE = "SQUARE";
-const SQUAREROOT = "SQUAREROOT";
-const RESET = "RESET";
+import {
+  DECREMENT,
+  TWODECREMENT,
+  INCREMENT,
+  TWOINCREMENT,
+  SQUARE,
+  SQUAREROOT,
+  RESET,
+} from "./actionTypes";
 
 const initialCount = 0;
-
 
 const countReducer = (state, action) => {
   switch (action) {
@@ -18,26 +19,16 @@ const countReducer = (state, action) => {
     case RESET:
       return initialCount;
     case TWODECREMENT:
-      return (state - 2);
+      return state - 2;
     case TWOINCREMENT:
-      return (state + 2);
+      return state + 2;
     case SQUARE:
-        return (state * state);
+      return state * state;
     case SQUAREROOT:
-        return Math.sqrt(state);
+      return Math.sqrt(state);
     default:
       return state;
   }
 };
 
-export {
-  DECREMENT,
-  INCREMENT,
-  TWODECREMENT,
-  TWOINCREMENT,
-  RESET,
-  countReducer,
-  initialCount,
-  SQUARE,
-  SQUAREROOT
-};
+export { countReducer, initialCount };
