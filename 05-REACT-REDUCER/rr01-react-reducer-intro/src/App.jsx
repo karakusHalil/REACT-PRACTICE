@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import Counter from "./components/Counter";
 import { ADD, DELETE, initialValue, todoReducer } from "./reducers/todos/todos";
+import TodoForm from "./components/todos/TodoForm";
 
 function App() {
   const [todo, dispatch] = useReducer(todoReducer, initialValue);
@@ -20,6 +21,7 @@ function App() {
           <button onClick={() => dispatch({ type: ADD, payload: 15 })}>+</button>
         </div>
       </div>
+      <TodoForm/>
     </>
   );
 }
