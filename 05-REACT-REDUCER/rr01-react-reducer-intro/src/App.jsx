@@ -13,11 +13,11 @@ function App() {
         <h3>TODO : {todo.count}</h3>
 
         <div>
-          <button onClick={() => dispatch({ type: DELETE, payload: 5 })}>
+          <button onClick={() => dispatch({ type: DELETE, payload: 15 })}>
             -
           </button>
 
-          <button onClick={() => dispatch({ type: ADD, payload: 5 })}>+</button>
+          <button onClick={() => dispatch({ type: ADD, payload: 15 })}>+</button>
         </div>
       </div>
     </>
