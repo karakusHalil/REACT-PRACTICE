@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, removeTodo } from "../../store/todo/todoSlice";
+import { addTodo, removeTodo, reset } from "../../store/todo/todoSlice";
 
 function ToDoForm() {
   const todos = useSelector((store) => store.todos);
@@ -18,6 +18,7 @@ function ToDoForm() {
         <input type="text" />
         <button type="submit">Add Todo</button>
       </form>
+      <hr />
       <ul>
         {todos.map((todo, index) => (
           <li key={index} onClick={() => dispatch(removeTodo(index))}>
@@ -25,6 +26,7 @@ function ToDoForm() {
           </li>
         ))}
       </ul>
+      <button onClick={() => dispatch(reset())}>RESET</button>
     </>
   );
 }
