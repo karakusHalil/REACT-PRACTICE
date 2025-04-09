@@ -4,6 +4,7 @@ import {
   decrement,
   increment,
   reset,
+  subtracted,
 } from "./store/counter/counterSlice";
 
 function App() {
@@ -28,6 +29,13 @@ function App() {
         }
       >
         ADDED
+      </button>
+      <button
+        onClick={() =>
+          dispatch(subtracted(Number(document.getElementById("number").value)))
+        }
+      >
+        Subtracted
       </button>
     </>
   );

@@ -22,8 +22,12 @@ const counterSlice = createSlice({
       console.log(state);
       return initialState;
     },
+    subtracted(state, action) {
+      state.value -= action.payload;
+    },
   },
 });
 
-export const { increment, decrement, added, reset } = counterSlice.actions;
+export const { increment, decrement, added, reset, subtracted } =
+  counterSlice.actions;
 export default counterSlice.reducer;
