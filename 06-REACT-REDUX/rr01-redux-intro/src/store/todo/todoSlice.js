@@ -13,5 +13,13 @@ const todoSlice = createSlice({
       console.log("removeTodo", state, action);
       state.splice(action.payload, 1);
     },
+    reset(state) {
+      console.log("reset", state);
+      return initialState;
+    },
   },
 });
+
+export const { addTodo, removeTodo, reset } = todoSlice.actions;
+
+export default todoSlice.reducer;
