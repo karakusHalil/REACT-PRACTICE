@@ -9,5 +9,9 @@ const todoSlice = createSlice({
       console.log("addTodo", state, action);
       state.unshift(action.payload);
     },
+    removeTodo(state, action) {
+      console.log("removeTodo", state, action);
+      state.splice(action.payload, 1);
+    },
   },
 });
