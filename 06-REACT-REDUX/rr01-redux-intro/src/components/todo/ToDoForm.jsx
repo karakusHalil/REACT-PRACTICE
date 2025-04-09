@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../../store/todo/todoSlice";
+import { addTodo, removeTodo } from "../../store/todo/todoSlice";
 
 function ToDoForm() {
   const todos = useSelector((store) => store.todos);
@@ -20,7 +20,9 @@ function ToDoForm() {
       </form>
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+          <li key={index} onClick={() => dispatch(removeTodo(index))}>
+            {todo}
+          </li>
         ))}
       </ul>
     </>
