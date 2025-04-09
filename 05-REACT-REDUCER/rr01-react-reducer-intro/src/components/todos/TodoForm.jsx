@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import { initialTodo, toDoReducer } from "../../reducers/todo/todo";
-import { ADD_TODO, REMOVE_TODO } from "../../reducers/todo/actionTypes";
+import { ADD_TODO, REMOVE_TODO, RESET } from "../../reducers/todo/actionTypes";
 
 function TodoForm() {
   const [todoList, dispatch] = useReducer(toDoReducer, initialTodo);
@@ -37,6 +37,7 @@ function TodoForm() {
             </li>
           ))}
         </ul>
+        <button onClick={() => dispatch({ type: RESET })}>RESET</button>
       </div>
     </>
   );
