@@ -6,6 +6,7 @@ import {
   reset,
   subtracted,
 } from "./store/counter/counterSlice";
+import ToDoForm from "./components/todo/ToDoForm";
 
 function App() {
   const value = useSelector((store) => store.counter.value);
@@ -37,6 +38,9 @@ function App() {
       >
         Subtracted
       </button>
+      <hr />
+      <h2>TODO LIST</h2>
+      <ToDoForm />
     </>
   );
 }
