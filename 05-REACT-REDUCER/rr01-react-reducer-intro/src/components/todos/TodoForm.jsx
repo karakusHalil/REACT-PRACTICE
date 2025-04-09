@@ -1,17 +1,16 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { initialTodo, toDoReducer } from "../../reducers/todo/todo";
-import { ADD_TODO } from "../../reducers/todo/actionTypes";
+import { ADD_TODO, REMOVE_TODO } from "../../reducers/todo/actionTypes";
 
 function TodoForm() {
   const [todoList, dispatch] = useReducer(toDoReducer, initialTodo);
-  const[error,setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const inputValue = e.target.elements[0].value;
     console.log(inputValue);
     if (inputValue === "") {
-      setError("lütfen inputu doldurunuz");
+      alert("lütfen inputu doldurunuz");
       return;
     } else {
       dispatch({ type: ADD_TODO, payload: inputValue });
@@ -26,11 +25,14 @@ function TodoForm() {
         <h3>To Do Form</h3>
         <form onSubmit={handleSubmit}>
           <input type="text" />
-          <button type="submit" disabled={handleSubmit.inputValue === ""}>ADD</button>
+          <button type="submit">ADD</button>
         </form>
         <ul>
           {todoList.todos.map((todo) => (
-            <li key={todo.id}>
+            <li
+              key={todo.id}
+              onClick={() => dispatch({ type: REMOVE_TODO, payload: todo.id })}
+            >
               {todo.title} - {todo.id}
             </li>
           ))}
