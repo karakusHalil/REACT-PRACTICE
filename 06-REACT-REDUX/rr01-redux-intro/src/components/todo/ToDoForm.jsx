@@ -19,6 +19,7 @@ function ToDoForm() {
         <button type="submit">Add Todo</button>
       </form>
       <hr />
+      <button onClick={() => dispatch(reset())}>RESET</button>
       <ul>
         {todos.map((todo, index) => (
           <li key={index} onClick={() => dispatch(removeTodo(index))}>
@@ -26,7 +27,6 @@ function ToDoForm() {
           </li>
         ))}
       </ul>
-      <button onClick={() => dispatch(reset())}>RESET</button>
     </>
   );
 }
