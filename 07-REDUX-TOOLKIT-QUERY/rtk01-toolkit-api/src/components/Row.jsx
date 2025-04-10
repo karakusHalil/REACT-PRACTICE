@@ -1,16 +1,16 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-function Row({children, className}) {
+function Row({ children, className }) {
   return (
-    <div className={`row ${className}`}>
-        {children}
-    </div>
-  )
+    <>
+      <div className={`row ${className}`}>{children}</div>
+    </>
+  );
 }
 
-export default Row
+export default Row;
 
 Row.propTypes = {
-    children : PropTypes.element,
-    className : PropTypes.string
-}
+  children: PropTypes.element,
+  className: PropTypes.string,
+};

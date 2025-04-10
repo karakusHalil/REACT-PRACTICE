@@ -23,22 +23,22 @@ function Navbar() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to="/">
-                  Home
+                  Ana Sayfa
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="#">
-                  Features
+                <NavLink className="nav-link" to="/fetchcategories">
+                  Fetch
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="#">
-                  Pricing
+                <NavLink className="nav-link" to="/axioscategories">
+                  Axios
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="">
-                  Disabled
+                <NavLink className="nav-link" to="/toolkitcategories">
+                  Toolkit Query
                 </NavLink>
               </li>
             </ul>
