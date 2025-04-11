@@ -35,11 +35,7 @@ function FetchCatsOfCategory() {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      getApiData();
-    }, 100);
-
-    return () => clearInterval(intervalId);
+    getApiData();
   }, []);
 
   return (
