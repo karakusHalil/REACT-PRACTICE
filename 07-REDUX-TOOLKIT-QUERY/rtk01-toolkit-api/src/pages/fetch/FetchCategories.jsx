@@ -13,7 +13,7 @@ function FetchCategories() {
         <ul className="list-group">
           {data.map((item) => (
             <li key={item.id} className="list-group-item">
-              <Link className="nav-link" to="/">{item.name}</Link>
+              <Link className="nav-link" to={`/fetchcategories/${item.id}`}>{item.name}</Link>
             </li>
           ))}
         </ul>

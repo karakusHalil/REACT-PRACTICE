@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import CardLoading from "../../components/CardLoading"
+import CardLoading from "../../components/CardLoading";
+import CatCard from "../../components/CatCard";
+import Row from "../../components/Row";
 
 const VITE_CAT_API_URL = import.meta.env.VITE_CAT_API_URL;
 const VITE_CAT_API_KEY = import.meta.env.VITE_CAT_API_KEY;
 
 function FetchCatsOfCategory() {
-  const {categoryName} = useParams();
+  const { categoryName } = useParams();
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -41,15 +43,17 @@ function FetchCatsOfCategory() {
   }, []);
 
   return (
-  <>
-    <div>
+    <>
+      <div>
         <h2>Bread : {categoryName}</h2>
-        {
-            isError ? <h3>{error}</h3> : isLoading ? <CartLoading/> : ""
-        }
-        
-    </div>
-  </>
+        {isError ? <h3>{error}</h3> : isLoading ? <CardLoading /> : ""}
+        <Row>
+          {data.map((cat) => (
+            <CatCard key={cat.id} cat={cat} />
+          ))}
+        </Row>
+      </div>
+    </>
   );
 }
 
