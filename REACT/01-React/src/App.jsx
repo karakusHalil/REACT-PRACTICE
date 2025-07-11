@@ -21,6 +21,11 @@ function App() {
       "ilk render edildiğinde ve lastname state değeri değiştiğinde çalışır"
     );
   }, [lastName]);
+  useEffect(() => {
+    console.log(
+      "ilk render edildiğinde ve firstname veya lastname state değeri değiştiğinde çalışır"
+    );
+  }, [firstName, lastName]);
   return (
     <>
       <div>
