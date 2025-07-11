@@ -1,0 +1,15 @@
+.course img {
+  width: 250px;
+  height: 150px;
+}
+
+.course a {
+  color: blue;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2 ease;
+}
+
+.course a:hover {
+  transform: scale(1.2);
+}
