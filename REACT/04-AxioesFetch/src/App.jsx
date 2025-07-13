@@ -27,7 +27,26 @@ function App() {
     await axios.delete(`${BASE_URL}/users/${userId}`);
   };
 
+  const getUserById2 = async (userId) => {
+    const response = await axios.get(`${BASE_URL}/users/${userId}`);
+    return response.data.postId;
+  };
+
+  const getPostById = async (postId) => {
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/posts/" + postId
+    );
+    return response.data;
+  };
+
+  const getPost = async () => {
+    const postId = await getUserById2(1);
+    const postData = await getPostById(postId);
+    console.log(postData);
+  };
+
   useEffect(() => {
+    getPost();
     // getAllUsers();
     // getUserById(2);
     // const newUser = {
