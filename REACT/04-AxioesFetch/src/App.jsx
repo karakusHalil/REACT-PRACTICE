@@ -9,8 +9,14 @@ function App() {
     console.log(response.data);
   };
 
+  const getUserById = async (userId) => {
+    const response = await axios.get(BASE_URL + "/users/" + userId);
+    console.log(response.data);
+  };
+
   useEffect(() => {
-    getAllUsers();
+    // getAllUsers();
+    getUserById(2);
   }, []);
   return (
     <>
