@@ -19,14 +19,27 @@ function App() {
     console.log("response", response.data);
   };
 
+  const updateUser = async (userId, updateUser) => {
+    await axios.put(`${BASE_URL}/users/${userId}`, updateUser);
+  };
+
+  const deleteUserById = async (userId) => {
+    await axios.delete(`${BASE_URL}/users/${userId}`);
+  };
+
   useEffect(() => {
     // getAllUsers();
     // getUserById(2);
-    const newUser = {
-      username: "bilal",
-      password: "3636",
-    };
-    createUser(newUser);
+    // const newUser = {
+    //   username: "bilal",
+    //   password: "3636",
+    // };
+    // createUser(newUser);
+    // updateUser("8cce", {
+    //   username: "necip",
+    //   password: "5555",
+    // });
+    // deleteUserById("cd6c");
   }, []);
   return (
     <>
