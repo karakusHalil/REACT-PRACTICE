@@ -1,15 +1,39 @@
+h3 {
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
 .currency-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* hafif şeffaf zemin */
+  border-radius: 16px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 800px;
+  margin: 200px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(0, 157, 255, 0.895);
+}
+
+.exchange {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* hafif şeffaf zemin */
-  padding: 40px;
-  border-radius: 16px;
-  max-width: 800px;
-  margin: 200px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 /* Giriş ve seçim kutuları */
@@ -28,4 +52,20 @@
 .currency-div select:focus {
   outline: none;
   border-color: #007bff;
+}
+
+.btn-exchange {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-exchange:hover {
+  background-color: #bbb;
+  transform: scale(1.05);
 }
