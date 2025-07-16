@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../css/currency.css";
 import { FaArrowRightLong } from "react-icons/fa6";
+import axios from "axios";
 
 let BASE_URL = "https://api.freecurrencyapi.com/v1/latest";
 let API_KEY = "fca_live_Jbuc4T6LTPmVmTyIOFx9AaKwWhWIwylAXNLhYQeI";
@@ -8,13 +9,16 @@ let API_KEY = "fca_live_Jbuc4T6LTPmVmTyIOFx9AaKwWhWIwylAXNLhYQeI";
 const Currency = () => {
   const [amount, setAmount] = useState(0);
   const [fromCurrency, setFromCurrency] = useState("USD");
-  const [toCurrency, setToCurrency] = useState("TL");
+  const [toCurrency, setToCurrency] = useState("TRY");
   const [result, setResult] = useState(0);
+  let EXCHANGE_API = `${BASE_URL}`;
 
-  const exchange = () => {
-    console.log(amount);
-    console.log(fromCurrency);
-    console.log(toCurrency);
+  const exchange = async () => {
+    const response = await axios.get(
+      `${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`
+    );
+    const result = response.data.data[toCurrency] * amount;
+    setResult(result.toFixed(2));
   };
 
   return (
@@ -38,7 +42,7 @@ const Currency = () => {
           >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
-            <option value="TL">TL</option>
+            <option value="TRY">TL</option>
           </select>
           <FaArrowRightLong />
           <select
@@ -46,7 +50,7 @@ const Currency = () => {
             defaultValue="TL"
             onChange={(e) => setToCurrency(e.target.value)}
           >
-            <option value="TL">TL</option>
+            <option value="TRY">TL</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
           </select>
