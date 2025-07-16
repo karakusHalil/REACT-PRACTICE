@@ -1,4 +1,5 @@
-import React from "react";
+import "../css/currency.css";
+import { FaArrowRightArrowLeft } from "react-icons/fa6";
 
 const Currency = () => {
   return (
@@ -10,6 +11,7 @@ const Currency = () => {
           <option value="">EUR</option>
           <option value="">TL</option>
         </select>
+        <FaArrowRightArrowLeft />
         <select className="to-currency-option">
           <option value="">TL</option>
           <option value="">USD</option>
