@@ -2,6 +2,9 @@ import { useState } from "react";
 import "../css/currency.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+let BASE_URL = "https://api.freecurrencyapi.com/v1/latest";
+let API_KEY = "fca_live_Jbuc4T6LTPmVmTyIOFx9AaKwWhWIwylAXNLhYQeI";
+
 const Currency = () => {
   const [amount, setAmount] = useState(0);
   const [fromCurrency, setFromCurrency] = useState("USD");
