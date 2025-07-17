@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const createTodo = (newTodo) => {
-    setTodos([...todos, newTodo]);
+    setTodos([newTodo, ...todos]);
   };
 
   const removeTodo = (todoId) => {
