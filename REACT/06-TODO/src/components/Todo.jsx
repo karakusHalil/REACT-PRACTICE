@@ -1,7 +1,8 @@
 import { IoIosRemoveCircle } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 
-const Todo = () => {
+const Todo = ({ todo }) => {
+  const { id, content } = todo;
   return (
     <>
       <div
@@ -13,9 +14,10 @@ const Todo = () => {
           border: "1px solid lightgray",
           padding: "10px",
           borderRadius: "5px",
+          marginTop: "10px",
         }}
       >
-        <div>Ben ilk Todoyum</div>
+        <div>{content}</div>
         <div>
           <IoIosRemoveCircle
             style={{ marginRight: "15px", fontSize: "20px", cursor: "pointer" }}
