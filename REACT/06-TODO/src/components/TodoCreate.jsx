@@ -16,6 +16,7 @@ const TodoCreate = ({ onCreateTodo }) => {
     <>
       <div className="todo-create">
         <input
+          className="create-input"
           type="text"
           onChange={(e) => setNewTodo(e.target.value)}
           value={newTodo}
