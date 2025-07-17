@@ -1,8 +1,13 @@
 import { IoIosRemoveCircle } from "react-icons/io";
 import { FaEdit } from "react-icons/fa";
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, onRemoveTodo }) => {
   const { id, content } = todo;
+
+  const removeTodo = () => {
+    onRemoveTodo(id);
+  };
+
   return (
     <>
       <div
@@ -21,6 +26,7 @@ const Todo = ({ todo }) => {
         <div>
           <IoIosRemoveCircle
             style={{ marginRight: "15px", fontSize: "20px", cursor: "pointer" }}
+            onClick={removeTodo}
           />
           <FaEdit
             style={{ marginRight: "1px", fontSize: "20px", cursor: "pointer" }}

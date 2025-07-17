@@ -1,10 +1,13 @@
 import Todo from "./Todo";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onRemoveTodo }) => {
   return (
     <>
       <div style={{ width: "100%", marginTop: "50px" }}>
-        {todos && todos.map((todo) => <Todo key={todo.id} todo={todo} />)}
+        {todos &&
+          todos.map((todo) => (
+            <Todo key={todo.id} todo={todo} onRemoveTodo={onRemoveTodo} />
+          ))}
       </div>
     </>
   );
