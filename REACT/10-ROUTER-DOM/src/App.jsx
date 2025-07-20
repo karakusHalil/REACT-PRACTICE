@@ -5,6 +5,8 @@ import Contact from "./pages/Contact";
 import Product from "./pages/Product";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
+import EmployeeAbout from "./pages/EmployeeAbout";
+import CompanyAbout from "./pages/CompanyAbout";
 
 function App() {
   return (
@@ -12,7 +14,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />}>
+          <Route path="employee" element={<EmployeeAbout />} />
+          <Route path="company" element={<CompanyAbout />} />
+        </Route>
         <Route path="/contact" element={<Contact />} />
         <Route path="/product" element={<Product />} />
         <Route path="*" element={<NotFound />} />
