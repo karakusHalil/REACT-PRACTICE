@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import PageContainer from "./container/PageContainer";
 import "./App.css";
+import ProductList from "./components/ProductList";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div>
         <PageContainer>
           <Header />
+          <ProductList />
         </PageContainer>
       </div>
     </>
