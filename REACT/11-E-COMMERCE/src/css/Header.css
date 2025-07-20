@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.logo {
+  width: 200px;
+  height: 50px;
+  margin-right: 40px;
+}
+
+.logo-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid lightgrey;
+  padding: 5px 10px;
+  outline: none;
+  margin-right: 20px;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
