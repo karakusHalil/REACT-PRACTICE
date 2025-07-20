@@ -3,6 +3,8 @@ import { FaBasketShopping } from "react-icons/fa6";
 import { CiLight } from "react-icons/ci";
 import { IoMdMoon } from "react-icons/io";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../images/thomas-sabo-seeklogo.png";
 
 const Header = () => {
   const [theme, setTheme] = useState(false);
@@ -20,11 +22,9 @@ const Header = () => {
   return (
     <div className="main">
       <div className="flex-row">
-        <img
-          className="logo"
-          src="./src/images/thomas-sabo-seeklogo.png"
-          alt=""
-        />
+        <Link to="/">
+          <img className="logo" src={logo} alt="" />
+        </Link>
         <p className="logo-text">Thomas Sabo Company</p>
       </div>
 
