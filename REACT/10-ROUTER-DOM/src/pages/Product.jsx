@@ -1,9 +1,16 @@
-import React from 'react'
-
+import Products from "../components/Products";
+import { productData } from "../data/productData";
 const Product = () => {
   return (
-    <div>Product</div>
-  )
-}
+    <>
+      <div>
+        {productData &&
+          productData.map((product) => (
+            <Products key={product.id} product={product} />
+          ))}
+      </div>
+    </>
+  );
+};
 
-export default Product
+export default Product;
