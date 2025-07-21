@@ -5,9 +5,24 @@ import { IoMdMoon } from "react-icons/io";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/thomas-sabo-seeklogo.png";
+import Badge from "@mui/material/Badge";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [theme, setTheme] = useState(false);
+
+  const { products } = useSelector((store) => store.basket);
+
+  const calculationCount = () => {
+    const totalCount =
+      products &&
+      products.reduce((total, product) => {
+        return total + product.count;
+      }, 0);
+
+    return totalCount;
+  };
+
   const changeTheme = () => {
     const root = document.getElementById("root");
     if (theme) {
@@ -37,7 +52,9 @@ const Header = () => {
             <CiLight className="icon" onClick={changeTheme} />
           )}
 
-          <FaBasketShopping className="icon" />
+          <Badge badgeContent={calculationCount()} color="primary">
+            <FaBasketShopping className="icon" style={{ marginRight: "5px" }} />
+          </Badge>
         </div>
       </div>
     </div>

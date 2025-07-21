@@ -6,6 +6,7 @@ import "../css/ProductDetails.css";
 import { AiOutlinePlusSquare, AiOutlineMinusSquare } from "react-icons/ai";
 import { useState } from "react";
 import axios from "axios";
+import { addToBasket } from "../redux/slice/basketSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -51,6 +52,20 @@ const ProductDetails = () => {
     }
   };
 
+  const addBasket = () => {
+    const payload = {
+      id,
+      price,
+      image,
+      title,
+      description,
+      count,
+    };
+
+    dispatch(addToBasket(payload));
+    setCount(1);
+  };
+
   return (
     <>
       <div className="product-detail">
@@ -66,7 +81,7 @@ const ProductDetails = () => {
             <AiOutlinePlusSquare onClick={increment} />
           </div>
           <div className="basket">
-            <button>Sepete Ekle</button>
+            <button onClick={addBasket}>Sepete Ekle</button>
           </div>
         </div>
       </div>
