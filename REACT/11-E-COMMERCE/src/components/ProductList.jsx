@@ -5,18 +5,22 @@ import Product from "./Product";
 
 const ProductList = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((store) => store.product);
+  const { products, searchTerm } = useSelector((store) => store.product);
 
   useEffect(() => {
     dispatch(getAllProducts());
   }, []);
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <div className="flex-row" style={{ flexWrap: "wrap", marginTop: "10px" }}>
-        {products &&
-          products.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
+        {filteredProducts.map((product) => (
+          <Product key={product.id} product={product} />
+        ))}
       </div>
     </>
   );
