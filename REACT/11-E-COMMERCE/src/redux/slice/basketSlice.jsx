@@ -9,6 +9,8 @@ const getBasketFromStorage = () => {
 };
 const initialState = {
   products: getBasketFromStorage(),
+  drawer: false,
+  totalAmount: 0,
 };
 
 const writeFromBasketToStorage = (basket) => {
@@ -30,9 +32,18 @@ export const basketSlice = createSlice({
       }
       writeFromBasketToStorage(state.products);
     },
+    setDrawer: (state) => {
+      state.drawer = !state.drawer;
+    },
+    calculateBasket: (state) => {
+      const total = state.products?.reduce((sum, product) => {
+        return sum + product.price * product.count;
+      }, 0);
+      state.totalAmount = total.toFixed(2);
+    },
   },
 });
 
-export const { addToBasket } = basketSlice.actions;
+export const { addToBasket, setDrawer, calculateBasket } = basketSlice.actions;
 
 export default basketSlice.reducer;
