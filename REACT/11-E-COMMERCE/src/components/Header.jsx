@@ -6,12 +6,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/thomas-sabo-seeklogo.png";
 import Badge from "@mui/material/Badge";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../redux/slice/basketSlice";
+import { setSearchTerm } from "../redux/slice/productSlice";
 
 const Header = () => {
   const [theme, setTheme] = useState(false);
 
   const { products } = useSelector((store) => store.basket);
+  const searchTerm = useSelector((store) => store.product.searchTerm);
+  const dispatch = useDispatch();
+
+  const handleSearchChange = (e) => {
+    dispatch(setSearchTerm(e.target.value));
+  };
 
   const calculationCount = () => {
     const totalCount =
@@ -44,7 +52,13 @@ const Header = () => {
       </div>
 
       <div className="flex-row">
-        <input className="search-input" type="text" placeholder="Arama" />
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Arama"
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
         <div>
           {theme ? (
             <IoMdMoon className="icon" onClick={changeTheme} />
@@ -53,7 +67,11 @@ const Header = () => {
           )}
 
           <Badge badgeContent={calculationCount()} color="primary">
-            <FaBasketShopping className="icon" style={{ marginRight: "5px" }} />
+            <FaBasketShopping
+              onClick={() => dispatch(setDrawer())}
+              className="icon"
+              style={{ marginRight: "5px" }}
+            />
           </Badge>
         </div>
       </div>
