@@ -6,7 +6,7 @@ import "../css/ProductDetails.css";
 import { AiOutlinePlusSquare, AiOutlineMinusSquare } from "react-icons/ai";
 import { useState } from "react";
 import axios from "axios";
-import { addToBasket } from "../redux/slice/basketSlice";
+import { addToBasket, calculateBasket } from "../redux/slice/basketSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -15,14 +15,14 @@ const ProductDetails = () => {
 
   const { price, title, image, description } = selectedProduct;
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const increment = () => {
     setCount((prev) => prev + 1);
   };
 
   const decrement = () => {
-    setCount((prev) => prev - 1);
+    setCount((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
   useEffect(() => {
@@ -63,6 +63,7 @@ const ProductDetails = () => {
     };
 
     dispatch(addToBasket(payload));
+    dispatch(calculateBasket());
     setCount(1);
   };
 
