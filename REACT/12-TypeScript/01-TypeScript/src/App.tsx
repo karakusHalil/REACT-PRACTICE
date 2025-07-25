@@ -108,6 +108,21 @@ function App() {
 
   writeConsole(myArray);
 
+  //interface-type : kendi tipimizi oluşturmamızı sağlıyor
+
+  type User5 = {
+    name: string;
+    age: number;
+  };
+
+  //Generic
+
+  function yazdir(array:string[]){
+    console.log(array)
+  }
+
+  yazdir
+
   return (
     <>
       <div>
