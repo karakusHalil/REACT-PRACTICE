@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // function yazdir(array: string[]) {
+  //   console.log(array);
+  // }
+  // yazdir(["halil", "ali", "veli"]);
+  // yazdir([1, 2, 3, 4, 5]); yanlış
+  // yazdir([true, false]); yanlış
+
+  function yazdir<T>(array: T[]): void {
+    console.log(array);
+  }
+
+  yazdir(["enes", "ali"]);
+  yazdir([1, 2, 3, 4, 5]);
+  yazdir([true, false]);
+
+  interface GenericType<T> {
+    name: string;
+    age: number;
+    salary: T[];
+  }
+
+  const obj1: GenericType<string> = {
+    name: "Halil",
+    age: 28,
+    salary: ["25000", "30000", "40000"],
+  };
+
+  console.log(obj1);
+
+  const obj2: GenericType<number> = {
+    name: "Harun",
+    age: 30,
+    salary: [30000],
+  };
+  console.log(obj2);
+
+  let array: GenericType<string | number>[] = [obj1, obj2];
+
+  // console.log(array);
+
+  function write<T>(array: GenericType<T>[]): void {
+    array.forEach((value: GenericType<T>) => {
+      console.log(value);
+    });
+  }
+
+  write(array);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div></div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
