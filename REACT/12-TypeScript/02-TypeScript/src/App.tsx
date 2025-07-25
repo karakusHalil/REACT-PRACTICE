@@ -49,6 +49,31 @@ function App() {
 
   write(array);
 
+  //miras alma - extends
+
+  interface OrtakAlanlar {
+    id: string;
+    olusturmaTarihi: string;
+    olusturanKisi: string;
+  }
+
+  interface Musteri extends OrtakAlanlar {
+    musteriNo: string;
+  }
+
+  interface Kurum extends OrtakAlanlar {
+    kurumNo: string;
+  }
+
+  const kurum: Kurum = {
+    id: "1",
+    olusturmaTarihi: "09.06.2024",
+    olusturanKisi: "Enes",
+    kurumNo: "23123",
+  };
+
+  console.log(kurum);
+
   return (
     <>
       <div></div>
