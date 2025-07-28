@@ -1,13 +1,12 @@
-
-import './App.css'
+import "./App.css";
+import TodoCreate from "./components/TodoCreate";
 
 function App() {
-
   return (
     <>
-   
+      <TodoCreate />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
