@@ -75,7 +75,9 @@ function App() {
   //Partial, Required, ReadOnly, pick, omit
   //Partial: optional yapar
   //Required: her şeyi doldurmak zorunda bırakır
-  //ReadOnly:
+  //ReadOnly: setlemeyi engeller sadece okunabilir yapar
+  //Pick : sadece belirlenen değişkeni almak için kullanır
+  //Omit : belirlenen alanları setleyemezsin onun dışındakileri setlemene izin verir
 
   interface User {
     name: string;
@@ -118,8 +120,35 @@ function App() {
     age: 15,
   };
 
-  user3.name = "ali";
-  console.log(user3.name);
+  // user3.name = "ali";
+  // console.log(user3.name);
+
+  interface User4 {
+    name: string;
+    age: number;
+    lastname: string;
+    tckn: string;
+    birthdate: string;
+  }
+
+  const user4: Pick<User4, "name" | "age"> = {
+    name: "enes",
+    age: 15,
+  };
+
+  interface User5 {
+    name: string;
+    age: number;
+    lastname: string;
+    tckn: string;
+    birthdate: string;
+  }
+
+  const user5: Omit<User5, "name" | "age"> = {
+    lastname: "karakus",
+    tckn: "213213213",
+    birthdate: "12321321",
+  };
 
   return (
     <>
