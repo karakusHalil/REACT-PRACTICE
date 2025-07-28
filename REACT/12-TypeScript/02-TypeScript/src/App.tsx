@@ -71,8 +71,55 @@ function App() {
     olusturanKisi: "Enes",
     kurumNo: "23123",
   };
+  //*----------------------------------*//
+  //Partial, Required, ReadOnly, pick, omit
+  //Partial: optional yapar
+  //Required: her şeyi doldurmak zorunda bırakır
+  //ReadOnly:
 
-  console.log(kurum);
+  interface User {
+    name: string;
+    age: number;
+    lastname: string;
+    tckn: string;
+    birthdate: string;
+  }
+
+  const user1: Partial<User> = {
+    //Partial interfacete alanların hepsine soru işareti atmak ile aynı, boş geçebiliyoruz
+    name: "enes",
+    age: 15,
+  };
+
+  interface User1 {
+    name?: string;
+    age?: number;
+    lastname?: string;
+    tckn?: string;
+    birthdate?: string;
+  }
+
+  // const user1: Required<User1> = {
+  //   //Required interfacete alanların hepsinin setlenmesi zorunmlu hale geliyor
+  //   name: "enes",
+  //   age: 15,
+  // };
+
+  interface User3 {
+    name: string;
+    age?: number;
+    lastname?: string;
+    tckn?: string;
+    birthdate?: string;
+  }
+
+  const user3: Readonly<User3> = {
+    name: "enes",
+    age: 15,
+  };
+
+  user3.name = "ali";
+  console.log(user3.name);
 
   return (
     <>
