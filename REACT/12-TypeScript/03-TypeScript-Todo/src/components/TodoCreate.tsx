@@ -27,6 +27,11 @@ const TodoCreate = () => {
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setNewTodo(e.target.value)
         }
+        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+          if (e.key === "Enter") {
+            handleCreateTodo();
+          }
+        }}
         className="todo-input"
         type="text"
         placeholder="Todo Giriniz..."
