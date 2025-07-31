@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useToogle = () => {
+const useToggle = () => {
   const [open, setOpen] = useState(false);
 
   const change = () => {
@@ -12,4 +12,4 @@ const useToogle = () => {
   };
 };
 
-export default useToogle;
+export default useToggle;

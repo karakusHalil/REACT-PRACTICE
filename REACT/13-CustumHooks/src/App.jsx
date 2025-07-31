@@ -1,11 +1,11 @@
 import "./App.css";
 import useCounter from "./hooks/useCounter";
-import useToogle from "./hooks/useToogle";
+import useToggle from "./hooks/useToggle";
 
 function App() {
   const { count, increase, decrease } = useCounter();
 
-  const { open, change } = useToogle();
+  const { open, change } = useToggle();
   return (
     <>
       {/* <div className="counter">
