@@ -16,9 +16,17 @@ export const todoSlice = createSlice({
 
       //state.todos.push(action.payload) typescriptte daha kullanışlı yeni array oluşturmaz
     },
+    removeTodoById: (
+      state: TodoInitialState,
+      action: PayloadAction<number>
+    ) => {
+      state.todos = state.todos.filter(
+        (todo: TodoType) => todo.id !== action.payload
+      );
+    },
   },
 });
 
-export const { createTodo } = todoSlice.actions;
+export const { createTodo, removeTodoById } = todoSlice.actions;
 
 export default todoSlice.reducer;
