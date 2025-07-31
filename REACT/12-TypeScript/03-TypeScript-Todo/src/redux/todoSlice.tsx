@@ -24,9 +24,21 @@ export const todoSlice = createSlice({
         (todo: TodoType) => todo.id !== action.payload
       );
     },
+    updateTodoById: (state, action: PayloadAction<TodoType>) => {
+      state.todos = state.todos.map((todo: TodoType) =>
+        todo.id !== action.payload.id ? todo : action.payload
+      );
+      //Daha performanslı hali altta
+      // const index = state.todos.findIndex(
+      //   (todo) => todo.id === action.payload.id
+      // );
+      // if (index !== -1) {
+      //   state.todos[index] = action.payload;
+      // }
+    },
   },
 });
 
-export const { createTodo, removeTodoById } = todoSlice.actions;
+export const { createTodo, removeTodoById, updateTodoById } = todoSlice.actions;
 
 export default todoSlice.reducer;
