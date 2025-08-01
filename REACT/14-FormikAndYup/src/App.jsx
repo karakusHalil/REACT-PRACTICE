@@ -1,9 +1,12 @@
 import "./App.css";
+import RegisterForm from "./components/RegisterForm";
 
 function App() {
   return (
     <>
-      <div>Formik + Yup</div>
+      <div className="App">
+        <RegisterForm />
+      </div>
     </>
   );
 }
