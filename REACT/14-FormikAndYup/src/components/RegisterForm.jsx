@@ -2,6 +2,12 @@ import { useFormik } from "formik";
 import { registerFormSchemas } from "../schemas/RegisterFormSchemas";
 
 const RegisterForm = () => {
+  const submit = (values, action) => {
+    setTimeout(() => {
+      action.resetForm();
+    }, 2000);
+  };
+
   const { values, handleChange, handleSubmit, resetForm, errors } = useFormik({
     initialValues: {
       email: "",
@@ -11,9 +17,7 @@ const RegisterForm = () => {
       term: false,
     },
     validationSchema: registerFormSchemas,
-    onSubmit: (values) => {
-      resetForm();
-    },
+    onSubmit: submit,
   });
   return (
     <div>
