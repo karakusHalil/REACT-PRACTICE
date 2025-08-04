@@ -2,8 +2,9 @@ import MUIButton from "./components/MUIButton";
 import MUITextField from "./components/MUITextField";
 import MUISelect from "./components/MUISelect";
 import MUICheckbox from "./components/MUICheckbox";
-import "./App.css";
 import MUIAutoComplete from "./components/MUIAutoComplete";
+import MUIBox from "./components/MUIBox";
+import "./App.css";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         {/* <MUITextField /> */}
         {/* <MUISelect /> */}
         {/* <MUICheckbox /> */}
-        <MUIAutoComplete />
+        {/* <MUIAutoComplete /> */}
+        <MUIBox />
       </div>
     </>
   );
