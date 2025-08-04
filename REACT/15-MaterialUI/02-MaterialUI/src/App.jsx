@@ -1,9 +1,12 @@
+import MUIStack from "./components/MUIStack";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <div></div>
+      <div>
+        <MUIStack />
+      </div>
     </>
   );
 }
