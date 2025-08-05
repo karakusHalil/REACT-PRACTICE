@@ -1,7 +1,8 @@
 import MUIStack from "./components/MUIStack";
 import MUIGrid from "./components/MUIGrid";
-import "./App.css";
 import MUICard from "./components/MUICard";
+import MUIAccordion from "./components/MUIAccordion";
+import "./App.css";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <div>
         {/* <MUIStack /> */}
         {/* <MUIGrid /> */}
-        <MUICard />
+        {/* <MUICard /> */}
+        <MUIAccordion />
       </div>
     </>
   );
