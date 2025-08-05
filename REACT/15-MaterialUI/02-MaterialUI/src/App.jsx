@@ -6,6 +6,7 @@ import MUIAppbar from "./components/MUIAppbar";
 import MUIImageList from "./components/MUIImageList";
 import MUIDrawer from "./components/MUIDrawer";
 import "./App.css";
+import MUIBadge from "./components/MUIBadge";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         {/* <MUIAccordion /> */}
         {/* <MUIAppbar /> */}
         {/* <MUIImageList /> */}
-        <MUIDrawer />
+        {/* <MUIDrawer /> */}
+        <MUIBadge />
       </div>
     </>
   );
