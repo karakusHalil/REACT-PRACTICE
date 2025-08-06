@@ -8,6 +8,7 @@ import MUIDrawer from "./components/MUIDrawer";
 import "./App.css";
 import MUIBadge from "./components/MUIBadge";
 import MUIAvatar from "./components/MUIAvatar";
+import MUITooltip from "./components/MUITooltip";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         {/* <MUIImageList /> */}
         {/* <MUIDrawer /> */}
         {/* <MUIBadge /> */}
-        <MUIAvatar />
+        {/* <MUIAvatar /> */}
+        <MUITooltip />
       </div>
     </>
   );
