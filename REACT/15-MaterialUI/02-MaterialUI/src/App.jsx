@@ -11,6 +11,7 @@ import MUIAvatar from "./components/MUIAvatar";
 import MUITooltip from "./components/MUITooltip";
 import MUIAlert from "./components/MUIAlert";
 import MUIDialog from "./components/MUIDialog";
+import MUISnackbar from "./components/MUISnackbar";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
         {/* <MUIAvatar /> */}
         {/* <MUITooltip /> */}
         {/* <MUIAlert /> */}
-        <MUIDialog />
+        {/* <MUIDialog /> */}
+        <MUISnackbar />
       </div>
     </>
   );
