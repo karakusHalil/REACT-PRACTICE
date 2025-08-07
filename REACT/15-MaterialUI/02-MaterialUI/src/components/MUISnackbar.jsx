@@ -2,6 +2,8 @@ import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
+import Alert from "@mui/material/Alert";
+
 import { useState } from "react";
 
 const MUISnackbar = () => {
@@ -36,11 +38,20 @@ const MUISnackbar = () => {
         <Button onClick={handleSnackbar}>Snackbar'ı Aç</Button>
         <Snackbar
           open={openSnackbar}
-          message="Hata oluştu !"
           action={action}
           autoHideDuration={3000}
           onClose={handleClose}
-        />
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        >
+          <Alert
+            severity="success"
+            onClose={handleClose}
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            Başarılı
+          </Alert>
+        </Snackbar>
       </div>
     </>
   );
