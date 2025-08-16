@@ -12,6 +12,7 @@ import MUITooltip from "./components/MUITooltip";
 import MUIAlert from "./components/MUIAlert";
 import MUIDialog from "./components/MUIDialog";
 import MUISnackbar from "./components/MUISnackbar";
+import MUIProgress from "./components/MUIProgress";
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
         {/* <MUITooltip /> */}
         {/* <MUIAlert /> */}
         {/* <MUIDialog /> */}
-        <MUISnackbar />
+        {/* <MUISnackbar /> */}
+        <MUIProgress />
       </div>
     </>
   );
