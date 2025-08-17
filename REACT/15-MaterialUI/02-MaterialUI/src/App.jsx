@@ -14,8 +14,7 @@ import MUIDialog from "./components/MUIDialog";
 import MUISnackbar from "./components/MUISnackbar";
 import MUIProgress from "./components/MUIProgress";
 import MUISkeleton from "./components/MUISkeleton";
-import Skeleton from '@mui/material/Skeleton';
-
+import MUITable from "./components/MUITable";
 
 function App() {
   return (
@@ -35,7 +34,8 @@ function App() {
         {/* <MUIDialog /> */}
         {/* <MUISnackbar /> */}
         {/* <MUIProgress /> */}
-        <MUISkeleton />
+        {/* <MUISkeleton /> */}
+        <MUITable />
       </div>
     </>
   );
