@@ -4,9 +4,10 @@ import { FaGoogle } from "react-icons/fa";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import { toast } from "react-toastify";
-import { auth } from "../Firebase";
+import { auth, provider } from "../Firebase";
 import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
@@ -44,6 +45,21 @@ const Auth = () => {
     }
   };
 
+  const loginGoogle = async () => {
+    try {
+      const response = await signInWithPopup(auth, provider);
+      //   const credential = GoogleAuthProvider.credentialFromResult(response);
+      //   const token = credential.accessToken;
+      const user = response.user;
+      if (user) {
+        toast.success("Başarıyla giriş yapıldı");
+        navigate("/");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   return (
     <>
       <div className="auth">
@@ -65,9 +81,9 @@ const Auth = () => {
           />
         </div>
         <div className="auth-button">
-          <button className="button-google">
+          <button className="button-google" onClick={loginGoogle}>
             <FaGoogle />
-            Google ile GİRİŞ
+            Google ile giriş
           </button>
           <button onClick={login} className="button-login">
             Giriş Yap
