@@ -1,0 +1,99 @@
+.auth {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  margin-top: 30px;
+}
+
+.auth-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.auth-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-email {
+  border: 1px solid lightgray;
+  padding: 8px;
+  width: 300px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.input-password {
+  border: 1px solid lightgray;
+  padding: 8px;
+  width: 300px;
+  border-radius: 5px;
+  margin: 15px 0px;
+}
+
+.auth-button {
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+}
+
+.button-login {
+  padding: 5px 15px;
+  border: none;
+  background-color: rgba(255, 217, 0, 0.562);
+  color: black;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-register {
+  padding: 5px 15px;
+  border: none;
+  background-color: rgba(255, 217, 0, 0.562);
+  color: black;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-login:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: gold;
+}
+.button-register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: gold;
+}
+
+.button-google {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 15px;
+  border: none;
+  background-color: rgba(219, 68, 55, 0.562);
+  color: white;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-google:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: rgba(219, 68, 55);
+}
